@@ -1,5 +1,5 @@
 [package]
-name = "pissed"
+name = "pissing"
 description = "Looks like a drunk guy make a PList serializing library"
 edition = "2024"
-version = "0.4.2"
+version = "0.1.0"
