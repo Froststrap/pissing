@@ -24,8 +24,6 @@
         pkgs = import nixpkgs {
           inherit system;
         };
-
-        froststrap = pkgs.callPackage ./nix/package.nix { };
       in
       {
         devShells =
@@ -42,12 +40,6 @@
             rustFrag
             extraFrag
           ] { nameOverride = "default"; };
-
-        packages = {
-          debug = pkgs.callPackage ./nix/build.nix { };
-          inherit froststrap;
-          default = froststrap;
-        };
 
         formatter = (pkgs.callPackage ./nix/formatter.nix { }) inputs;
       }
