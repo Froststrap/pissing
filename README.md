@@ -2,8 +2,6 @@
 
 PlIST SErializING
 
----
-
 ## Why use this shit library?
 
 It can be helpful for projects which need to create a PList file on runtime,

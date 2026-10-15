@@ -1,9 +1,15 @@
-pub mod pl;
+use pissing::prelude::*;
 
-use pl::*;
+fn main() {
+    let doc = PListFile::new("1.0").content(dict![
+        string("Test", "Gooooodwondqowinw"),
+        bool("dog_is_dead", true),
+        dict("racism", [string("buh", "asteyo")])
+    ]);
 
-pub fn main() {
-    let doc = PListFile::new(1.0);
+    doc.print();
 
-    doc.display()
+    if let Err(e) = doc.write("target/Info.plist") {
+        eprintln!("could not write target/Info.plist: {e}");
+    }
 }
